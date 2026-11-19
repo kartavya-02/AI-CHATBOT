@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CatBot 🐱</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Tesseract.js for OCR -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <!-- PDF.js for reading PDFs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.min.js"></script>
+</head>
+<body>
+  <div class="main-bg">
+    <div class="chat-box">
+      <div class="chat-header">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/616/616408.png"
+          alt="cat avatar"
+          class="cat-avatar"
+        />
+        <h2>CatBot 🐱</h2>
+      </div>
+
+      <div class="messages" id="messages"></div>
+
+      <div class="input-area">
+        <input
+          id="chat-input"
+          type="text"
+          placeholder="Type your message..."
+        />
+        <button id="send-btn">Send</button>
+      </div>
+
+      <div class="bottom-tools">
+        <button id="mic-btn">🎤 Speak</button>
+        <select id="language-select">
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="bn">Bengali</option>
+        </select>
+      </div>
+
+      <div class="ocr-section">
+        <input id="file-input" type="file" accept="image/*,.txt,.pdf" />
+        <button id="read-btn">📄 Read Document</button>
+        <p class="ocr-text" id="ocr-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

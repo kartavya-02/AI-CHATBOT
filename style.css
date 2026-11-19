@@ -1,0 +1,233 @@
+/* 🌈 Background */
+.main-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #dbeafe, #e0e7ff);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* 🐱 Chat container */
+.chat-box {
+  width: 380px;
+  max-height: 95vh;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 💬 Header */
+.chat-header {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.3em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cat-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* 💬 Messages area */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Chat bubbles */
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  line-height: 1.4;
+  max-width: 85%;
+  white-space: pre-wrap;
+}
+
+.message.user {
+  align-self: flex-end;
+  background: #dbeafe;
+  color: #111;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background: #ede9fe;
+  color: #111;
+}
+
+/* Typing animation */
+.typing-indicator {
+  display: flex;
+  gap: 5px;
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background: #8b5cf6;
+  border-radius: 50%;
+  animation: blink 1.4s infinite both;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+/* 🧠 Input area */
+.input-area {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+.input-area input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 15px;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-area input:focus {
+  border-color: #8b5cf6;
+}
+
+.input-area button {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.input-area button:hover {
+  transform: scale(1.05);
+}
+
+/* 🎤 Bottom tools */
+.bottom-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-top: 1px solid #eee;
+  background: #f9fafb;
+}
+
+.bottom-tools button {
+  background: linear-gradient(90deg, #8b5cf6, #6366f1);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.bottom-tools button:hover {
+  transform: scale(1.05);
+}
+
+.bottom-tools select {
+  border-radius: 10px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* 📄 OCR Section */
+.ocr-section {
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.ocr-section input[type="file"] {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.ocr-section button {
+  margin-top: 8px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ocr-section button:hover {
+  transform: scale(1.05);
+}
+
+/* 🧾 Scrollable document area */
+.ocr-text {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 8px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Scrollbar (Chrome/Edge) */
+.ocr-text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ocr-text::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.ocr-text::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+/* Extra: ensure body uses the same background container */
+body {
+  margin: 0;
+}
